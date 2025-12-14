@@ -31,70 +31,10 @@ The position of the curve for a parameter
 ]
 t∈[0,1] is calculated using the standard cubic Bézier equation:
 
-𝐵
-(
-𝑡
-)
-=
-(
-1
-−
-𝑡
-)
-3
-𝑃
-0
-+
-3
-(
-1
-−
-𝑡
-)
-2
-𝑡
-𝑃
-1
-+
-3
-(
-1
-−
-𝑡
-)
-𝑡
-2
-𝑃
-2
-+
-𝑡
-3
-𝑃
-3
-B(t)=(1−t)
-3
-P
-0
-	​
-
-+3(1−t)
-2
-tP
-1
-	​
-
-+3(1−t)t
-2
-P
-2
-	​
-
-+t
-3
-P
-3
-	​
-
+B(t) = (1 - t)^3 P0
+     + 3(1 - t)^2 t P1
+     + 3(1 - t) t^2 P2
+     + t^3 P3
 
 To draw the curve on the screen, I sample values of 
 𝑡
@@ -104,83 +44,10 @@ Tangent Computation
 
 To visualize the direction of the curve, I compute tangent vectors using the analytical derivative of the cubic Bézier equation:
 
-𝐵
-′
-(
-𝑡
-)
-=
-3
-(
-1
-−
-𝑡
-)
-2
-(
-𝑃
-1
-−
-𝑃
-0
-)
-+
-6
-(
-1
-−
-𝑡
-)
-𝑡
-(
-𝑃
-2
-−
-𝑃
-1
-)
-+
-3
-𝑡
-2
-(
-𝑃
-3
-−
-𝑃
-2
-)
-B
-′
-(t)=3(1−t)
-2
-(P
-1
-	​
+B'(t) = 3(1 - t)^2 (P1 - P0)
+      + 6(1 - t) t (P2 - P1)
+      + 3 t^2 (P3 - P2)
 
-−P
-0
-	​
-
-)+6(1−t)t(P
-2
-	​
-
-−P
-1
-	​
-
-)+3t
-2
-(P
-3
-	​
-
-−P
-2
-	​
-
-)
 
 The resulting vectors are normalized and drawn as short line segments at selected points along the curve. This helped me better understand how the curve direction changes as 
 𝑡
