@@ -1,5 +1,5 @@
-# bezier-curve-physics
-##Bézier Curve with Physics & Sensor Control
+#Bézier Curve with Physics & Sensor Control
+
 ##Project Overview
 
 In this project, I created an interactive cubic Bézier curve that behaves like a flexible, springy rope. The curve reacts smoothly to real-time user input (mouse movement on the web), and I also visualize tangent vectors along the curve to better understand its direction and behavior at different points.
